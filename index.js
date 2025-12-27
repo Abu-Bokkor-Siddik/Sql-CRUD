@@ -1,7 +1,7 @@
 const express = require("express");
 const cors = require("cors");
 require("dotenv").config();
-const { v4: uuidv4 } = require("uuid");
+// const { v4: uuidv4 } = require("uuid");
 const pool = require("./db"); //importing the db.js file
 const app = express();
 const PORT = process.env.PORT || 5000;
