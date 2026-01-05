@@ -40,7 +40,6 @@ app.get("/api/books/:id", async (req, res) => {
 // Post book route
 app.post("/api/books", async (req, res) => {
   try {
-    // const id = uuidv4();
     function get7DigitNumber() {
       return Math.floor(1000000 + Math.random() * 9000000);
     }
@@ -77,7 +76,6 @@ app.put("/api/books/:id", async (req, res) => {
       "UPDATE book SET name = $1, description = $2 WHERE id = $3 RETURNING *",
       [name, description, id]
     );
-    // console.log(name, description);
     res.status(201).json({ message: "Book updated", data: updateBook?.rows });
   } catch (error) {
     res.json({ message: error.message });
